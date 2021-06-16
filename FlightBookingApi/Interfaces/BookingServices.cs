@@ -30,7 +30,7 @@ namespace FlightBookingAPI.Interfaces
                     AirlineSchedule airlineSchedule = _scheduleServices.GetScheduleById(Guid.Parse(schedule.ScheduleId));
                     content.AirlineSchedule = airlineSchedule;
                     content.BookedSeats = booking.Passengers.Count;
-                    content.OrginalAmount = (schedule.IsBusinesClass ? airlineSchedule.BusinessClassPrice : airlineSchedule.BusinessClassPrice)* content.BookedSeats;
+                    content.OrginalAmount = (schedule.IsBusinesClass ? airlineSchedule.BusinessClassPrice : airlineSchedule.NonBusinessClassPrice)* content.BookedSeats;
                     content.DiscountAmount = booking.DiscountAmount / booking.Schedules.Count;
                     content.BookingAmount = content.OrginalAmount - booking.DiscountAmount;
                     content.ClassType = schedule.ClassType;

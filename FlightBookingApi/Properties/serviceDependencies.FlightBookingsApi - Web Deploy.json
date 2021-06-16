@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/flightbookingservice/apis/flightbookingsapi",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/flightbookingserver123/databases/FlightsBookingDb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:MyDB",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
