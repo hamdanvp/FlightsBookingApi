@@ -42,7 +42,7 @@ namespace FlightBookingAPI.Interfaces
             else if (searchModel.IsAdmin)
             {
                 result = _context.AirlineSchedules
-                            .Include(w => w.Airline).ToList();
+                            .Include(w => w.Airline).OrderBy(o=>o.FlightNo).ToList();
             }
 
             if (!string.IsNullOrEmpty(searchModel.AirlineName))
